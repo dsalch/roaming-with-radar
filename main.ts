@@ -1,3 +1,14 @@
+/**
+ * Advanced Roaming Project Demonstrating:
+ * 
+ *    Functions and Subfunctions
+ * 
+ *    Personality
+ * 
+ *    Servos
+ * 
+ *    Variables
+ */
 // 3. Decision Making: Scanning
 function scanAndTurn () {
     mbit_Robot.CarCtrl(mbit_Robot.CarState.Car_Stop)
