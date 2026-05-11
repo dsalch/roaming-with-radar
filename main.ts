@@ -64,6 +64,7 @@ basic.pause(1000)
 mbit_Robot.look(mbit_Robot.enLook.Right)
 basic.pause(1000)
 mbit_Robot.look(mbit_Robot.enLook.Forward)
+music.play(music.stringPlayable("C E G C5 C5 G C5 C5 ", 240), music.PlaybackMode.UntilDone)
 basic.pause(1000)
 basic.showIcon(IconNames.Fabulous)
 basic.forever(function () {
@@ -71,9 +72,9 @@ basic.forever(function () {
         mbit_Robot.look(mbit_Robot.enLook.Forward)
         basic.pause(100)
         ForwardDistance = mbit_Robot.Ultrasonic_Car()
-        if (ForwardDistance > 60) {
+        if (ForwardDistance > 70) {
             driveForward()
-        } else if (ForwardDistance < 30) {
+        } else if (ForwardDistance < 40) {
             scanAndTurn()
         }
     }
