@@ -46,7 +46,7 @@ function reverseAndPanic () {
     mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_Back, 50)
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Red)
     music.play(music.stringPlayable("C5 C5 - F F F - - ", 300), music.PlaybackMode.InBackground)
-    basic.pause(2000)
+    basic.pause(3000)
     scanAndTurn()
 }
 let ForwardDistance = 0
