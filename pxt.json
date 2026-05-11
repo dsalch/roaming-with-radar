@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "yahboom_main": "github:dsalch/yahboom_main#v2.1.8"
+        "yahboom_main": "github:dsalch/yahboom_main#2.1.10"
     },
     "files": [
         "main.blocks",

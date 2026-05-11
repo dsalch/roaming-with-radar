@@ -1,13 +1,13 @@
 /**
  * Advanced Roaming Project Demonstrating:
  * 
- *    Functions and Subfunctions
+ * Functions and Subfunctions
  * 
- *    Personality
+ * Personality
  * 
- *    Servos
+ * Servos
  * 
- *    Variables
+ * Variables
  */
 // 3. Decision Making: Scanning
 function scanAndTurn () {
@@ -23,9 +23,9 @@ function scanAndTurn () {
     basic.pause(500)
     // Compare and Choose Direction
     if (LeftDistance > RightDistance) {
-        mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_SpinLeft, 60)
+        mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_SpinLeft, 50)
     } else {
-        mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_SpinRight, 60)
+        mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_SpinRight, 50)
     }
     basic.pause(1000)
 }
@@ -33,17 +33,17 @@ function scanAndTurn () {
 function driveForward () {
     if (mbit_Robot.Ultrasonic_Car() > 120) {
         // High speed for clear paths
-        mbit_Robot.CarCtrlSpeed2(mbit_Robot.CarState.Car_Run, 90, 95)
+        mbit_Robot.CarCtrlSpeed2(mbit_Robot.CarState.Car_Run, 90, 90)
         mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.White)
     } else {
         // Slow down as we approach objects
-        mbit_Robot.CarCtrlSpeed2(mbit_Robot.CarState.Car_Run, 45, 50)
+        mbit_Robot.CarCtrlSpeed2(mbit_Robot.CarState.Car_Run, 50, 50)
         mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Cyan)
     }
 }
 // 4. Emergency Maneuver
 function reverseAndPanic () {
-    mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_Back, 45)
+    mbit_Robot.CarCtrlSpeed(mbit_Robot.CarState.Car_Back, 50)
     mbit_Robot.RGB_Car_Big2(mbit_Robot.enColor.Red)
     music.play(music.stringPlayable("C5 C5 - F F F - - ", 300), music.PlaybackMode.InBackground)
     basic.pause(2000)
@@ -69,8 +69,8 @@ basic.pause(1000)
 basic.showIcon(IconNames.Fabulous)
 basic.forever(function () {
     while (mbit_Robot.Avoid_Sensor(mbit_Robot.enAvoidState.NOOBSTACLE)) {
-        mbit_Robot.look(mbit_Robot.enLook.Forward)
-        basic.pause(100)
+        mbit_Robot.lookDegrees(-7)
+        basic.pause(10)
         ForwardDistance = mbit_Robot.Ultrasonic_Car()
         if (ForwardDistance > 70) {
             driveForward()
